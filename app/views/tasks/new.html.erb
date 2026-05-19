@@ -1,24 +1,7 @@
 <h1>🆕 New task</h1>
 
-<%= form_with model: @task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <br>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <br>
-  <br>
-  <%= f.label :completed %>
-  <%= f.checkbox :completed %>
-  <br>
-  <br>
-  <br>
-  <%= f.submit %>
-<% end %>
-<%#= render "form", task: @task %>
-
-  <br>
-  <br>
+<%= render "form", task: @task %>
+<br>
+<br>
 
 <%= link_to("↩ Back to list", tasks_path) %>
