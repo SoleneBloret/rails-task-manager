@@ -1,12 +1,13 @@
-<h1>✅ My tasks</h1>
+<h1><i class="fa-solid fa-list-check" style="color: rgb(196, 156, 242);"></i> My tasks</h1>
 
-<ul>
+<ul class="list-group">
   <% @tasks.each do |task| %>
-    <li>
+    <li class="list-group-item">
+      <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
       <%= link_to(task.title, task_path(task)) %>
       <%= link_to " -   🗑️",task_path(task), data: {turbo_method: :delete, turbo_confirm: "⚠️ Destroy '#{task.title}' task ?"} %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to("➕ Add a task", new_task_path) %>
+<button id="addTask" type="button" class="btn btn-outline-primary"> <%= link_to("Add a task", new_task_path) %> </button>
